@@ -98,7 +98,7 @@ const collection = fetch("assets/datas/collection.json")
 
                     const priceDrink = document.createElement("p");
                     priceDrink.className = "info__price"
-                    priceDrink.appendChild(document.createTextNode(el.prix));
+                    priceDrink.appendChild(document.createTextNode("€ "+el.prix));
                     divInfo.appendChild(priceDrink);
 
                     const quantDrink = document.createElement("p");
@@ -144,7 +144,7 @@ const collection = fetch("assets/datas/collection.json")
 
                 const desPrice = document.createElement("p");
                 desPrice.className = "info__price";
-                desPrice.appendChild(document.createTextNode(el.prix));
+                desPrice.appendChild(document.createTextNode("€ "+el.prix));
                 divInfo.appendChild(desPrice)
                 
                 
@@ -198,7 +198,7 @@ const collection = fetch("assets/datas/collection.json")
                     
                    const toPay = document.createElement("p");
                    toPay.className = "info__price";
-                   toPay.appendChild(document.createTextNode(el.prix));
+                   toPay.appendChild(document.createTextNode("€ "+el.prix));
                    divInfo.appendChild(toPay);
 
                     //added span
