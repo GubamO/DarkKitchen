@@ -35,11 +35,11 @@
 }
 .cart {
     display: flex;
-    bottom: 0px;
+    bottom: 80px;
     background-color:$color-lm-main;
-    ;
+    position: absolute;
     font-family: 'Lato', sans-serif;
-    width: 100;
+    width: 100%;
     padding: 10px;
     .txtcart {
       display: flex;
