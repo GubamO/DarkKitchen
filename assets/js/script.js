@@ -69,10 +69,11 @@ const collection = fetch("assets/datas/collection.json")
 
                 const divDrink =document.createElement("div");
                 divDrink.className = "drinks";
-                document.querySelector("main").appendChild(divDrink);
+                document.querySelector(".food").appendChild(divDrink);
                     const drinkTile  = document.createElement("h1");
                     divDrink.appendChild(drinkTile);
                     drinkTile.appendChild(document.createTextNode("Drinks"));
+                    drinkTile.className="food__title"
                 data[key].map (el =>{
 
                     const divCard = document.createElement("div");
@@ -120,7 +121,8 @@ const collection = fetch("assets/datas/collection.json")
                 const divDesserts = document.createElement("div");
                 divDesserts.className = "desserts"
                 const dessertsTitle = document.createElement("h1");
-                document.querySelector("main").appendChild(divDesserts);
+                dessertsTitle.className = "food__title";
+                document.querySelector(".food").appendChild(divDesserts);
                 divDesserts.appendChild(dessertsTitle);
                 dessertsTitle.appendChild(document.createTextNode("Desserts"));
 
@@ -177,25 +179,20 @@ const collection = fetch("assets/datas/collection.json")
             
             
             else{
-                const main =document.querySelector("main");
+                const main =document.querySelector(".food");
                 const div = document.createElement("div");
                 const divTitle = document.createElement("h1");
+                const text = document.createTextNode(key);
+                divTitle.appendChild(text);
+                divTitle.className = "food__title";
+                div.className = key;  
+                div.classList.add("food--wrapper")
+                div.appendChild(divTitle);  
+
                 
+                                    
 
-                if (key == "pizzas"){
-                    div.className = key;  
-                    div.appendChild(document.createTextNode(key));                  
-
-                }
-                else if (key == "pasta"){
-                    div.className = key;
-                    div.appendChild(document.createTextNode(key));                  
-
-                }else{
-                    div.className = key;
-                    div.appendChild(document.createTextNode(key));                  
-
-                }
+                
                 main.appendChild(div);
                 
                 data[key].map(el =>{

@@ -3,4 +3,9 @@ body{
 }
 main{
     margin-top: 250px;
+    @media screen and (min-width:1280px) {
+        margin-top: 180px ;
+        display: grid;
+        grid-template-columns: 1fr 380px;
+    }
 }
