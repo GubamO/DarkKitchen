@@ -1,26 +1,19 @@
 .header__nav {
-    background-color: $color-light-orange;
-    width: 390px;
+    width: 100%;
     height: 50px;
     display:flex;
-    
     .header__nav__list
     {
         margin: auto;
         display: flex;
         flex-direction: row;
         gap: 22px;
-        color: $color-white;
         li a{ 
-            color:$color-white;
+            color:$color-lm-secondary;
             text-decoration: none;
             text-transform: capitalize;
             
         }
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
-    
-    
-    
-
     }

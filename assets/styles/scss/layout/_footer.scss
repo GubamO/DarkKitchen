@@ -9,9 +9,8 @@
         display: flex;
         flex-direction: row;
         gap: 22px;
-       
         li a{ 
-            color: darkblue;
+            color:$color-lm-secondary;
             text-decoration: none;
             text-transform: capitalize;
             }
