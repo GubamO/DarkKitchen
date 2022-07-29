@@ -59,6 +59,20 @@ body {
   position: relative;
 }
 
+/* line 4, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_global.scss */
+main {
+  margin-top: 250px;
+}
+
+@media screen and (min-width: 1280px) {
+  /* line 4, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_global.scss */
+  main {
+    margin-top: 180px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+  }
+}
+
 /* line 1, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 h2 {
   font-size: 1.25em;
@@ -72,45 +86,68 @@ h2 {
   width: 100%;
 }
 
-/* line 9, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+@media screen and (min-width: 800px) {
+  /* line 9, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+  .food--wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  /* line 15, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+  .food__title {
+    grid-column: 1 / -1;
+  }
+}
+
+/* line 20, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card {
   display: flex;
   background-color: #f7f7f7;
   margin: 20px 0;
 }
 
-/* line 13, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+@media screen and (min-width: 800px) {
+  /* line 20, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+  .food__card {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+/* line 28, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card__container {
   aspect-ratio: 133/100;
   margin-right: 10px;
   height: 100px;
 }
 
-/* line 17, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+/* line 32, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card__container__image {
   height: 100%;
   display: block;
 }
 
-/* line 22, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+/* line 37, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card .info {
   display: flex;
   flex-direction: column;
 }
 
-/* line 25, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+/* line 40, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card .info p {
   display: block;
 }
 
-/* line 28, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+/* line 43, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card .info__price {
   margin-top: auto;
   margin-bottom: 5px;
   font-size: 1.25em;
 }
 
-/* line 34, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+/* line 49, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card__add {
   width: 32px;
   height: 32px;
@@ -124,7 +161,7 @@ h2 {
   position: relative;
 }
 
-/* line 45, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+/* line 60, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card__add::before {
   width: 20px;
   height: 5px;
@@ -137,7 +174,7 @@ h2 {
   background-color: #f7f7f7;
 }
 
-/* line 48, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
+/* line 63, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_foodcard.scss */
 .food__card__add::after {
   height: 20px;
   width: 5px;
@@ -172,7 +209,16 @@ h2 {
   text-transform: capitalize;
 }
 
-/* line 2, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+/* line 1, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+.header {
+  background-color: #32A89C;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+/* line 7, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
 .header__kitchen {
   background-color: #32A89C;
   color: #f7f7f7;
@@ -181,14 +227,13 @@ h2 {
   width: 100%;
   display: flex;
   align-items: center;
-  box-shadow: 0px 2px 10px black;
   margin-bottom: 5px;
   padding-left: 10px;
   font-size: 2.5em;
   font-weight: 700;
 }
 
-/* line 17, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+/* line 20, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
 .header__search {
   display: flex;
   background-color: #fff;
@@ -196,36 +241,34 @@ h2 {
   gap: 10px;
 }
 
-/* line 22, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+/* line 25, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
 .header__search__glass {
   width: 20px;
   height: 20px;
 }
 
-/* line 26, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+/* line 29, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
 .header__search__searchbar {
   width: 100%;
   border: none;
 }
 
-/* line 29, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+/* line 32, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
 .header__search__searchbar::placeholder {
   color: black;
   opacity: 50%;
 }
 
-/* line 36, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+/* line 39, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
 .cart {
   display: flex;
-  bottom: 80px;
   background-color: #32A89C;
-  position: absolute;
   font-family: 'Lato', sans-serif;
   width: 100%;
   padding: 10px;
 }
 
-/* line 44, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+/* line 45, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
 .cart .txtcart {
   display: flex;
   padding-left: 30px;
@@ -233,6 +276,27 @@ h2 {
   color: #f7f7f7;
   font-size: 1.875em;
   font-family: 'Lato', sans-serif;
+}
+
+@media screen and (min-width: 1280px) {
+  /* line 39, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+  .cart {
+    display: none;
+  }
+}
+
+/* line 58, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+.cartlisting {
+  background-color: #f7f7f7;
+  display: none;
+  padding: 10px;
+}
+
+@media screen and (min-width: 1280px) {
+  /* line 58, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_cart.scss */
+  .cartlisting {
+    display: block;
+  }
 }
 
 /* line 1, ../../OneDrive/Documents/BeCode/DarkKitchen/assets/styles/scss/layout/_navbar.scss */
