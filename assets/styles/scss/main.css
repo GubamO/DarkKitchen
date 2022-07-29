@@ -212,4 +212,36 @@ h2 {
   color: #f7f7f7;
   font-size: 30px;
   font-family: "Lato", sans-serif;
+}
+
+.btn-toggle-dm {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #333;
+  color: white;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+body.dark {
+  background-color: #55596C;
+}
+body.dark .header {
+  background-color: #6A7D99;
+}
+body.dark .header__kitchen {
+  background-color: #212134;
+}
+body.dark .header__nav {
+  background-color: #212134;
+}
+body.dark .header .cart {
+  background-color: #212134;
 }/*# sourceMappingURL=main.css.map */
