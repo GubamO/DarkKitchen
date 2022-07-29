@@ -1,4 +1,5 @@
 .footer {
+    background-color: $color-dark-orange;
     width: 390px;
     height: 50px;
     display:flex;
@@ -8,9 +9,8 @@
         display: flex;
         flex-direction: row;
         gap: 22px;
-        color: $color-white;
         li a{ 
-            color:$color-white;
+            color:$color-lm-secondary;
             text-decoration: none;
             text-transform: capitalize;
             }

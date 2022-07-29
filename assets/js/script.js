@@ -16,52 +16,41 @@
 
     // doesn't return anything but create new elements for the card,
     //here for the texte divion of a card.
-const getInfoCard = (division) =>{
-    const nameInfo = document.createElement("h2");
+// const getInfoCard = (division) =>{
+//     const nameInfo = document.createElement("h2");
 
-    const ingredientInfo = document.createElement("p");
-    const priceInfo = document.createElement("p");
+//     const ingredientInfo = document.createElement("p");
+//     const priceInfo = document.createElement("p");
 
-    const addInfo = document.createElement("span");
+//     const addInfo = document.createElement("span");
 
-// create 2 list to append element to the parameter and add class names.
-    const liste = [nameInfo, ingredientInfo, priceInfo, addInfo];
-    const listeClass =["info__name","info__ingredient","info__price","info__add"];
-    for (let i =0; i < liste.length; i++) {
-        liste[i].className = listeClass[i];
-        division.appendChild(liste[i]);
+// // create 2 list to append element to the parameter and add class names.
+//     const liste = [nameInfo, ingredientInfo, priceInfo, addInfo];
+//     const listeClass =["info__name","info__ingredient","info__price","info__add"];
+//     for (let i =0; i < liste.length; i++) {
+//         liste[i].className = listeClass[i];
+//         division.appendChild(liste[i]);
 
-    }
+//     }
     
 
-}
- //doesn't take any parameter 
+//}
  
-// create a card for the food, divide the card in two div 
-// one div is completed in the function 'getInfoCard'
-// the other one with the image is completed here
 
-const getFoodCard = () =>{
-    const divCard = document.createElement("div");
-    document.querySelector("main").appendChild(divCard);
-    const imgElement = document.createElement("img");
 
-    const divImage = document.createElement("div");
-    const divTexte = document.createElement("div");
-    const elementListe = [divCard,divImage,imgElement,divTexte];
-    const classListe = ["food__card","food__card__container","food__card__container__image","info"];
-    for (let i =0; i< elementListe.length; i++){
-        elementListe[i].className = classListe[i];
-    }
 
-    divCard.appendChild(divImage);
-    divImage.appendChild(imgElement);
-    divCard.appendChild(divTexte);
-    
-    getInfoCard(divTexte);
+
+
+
+
+//tried something here
+
+
+const getSpanAdd = (card) =>{
+    const spanAdd = document.createElement("span");
+    spanAdd.className = "food__card__add";
+    card.appendChild(spanAdd);
 }
-
-
 
 
 
@@ -78,11 +67,22 @@ const collection = fetch("assets/datas/collection.json")
             
             if (key == "drinks"){
 
+                const divDrink =document.createElement("div");
+                divDrink.className = "drinks food--wrapper";
+                document.querySelector(".food").appendChild(divDrink);
+                    const drinkTile  = document.createElement("h1");
+                    divDrink.appendChild(drinkTile);
+                    drinkTile.appendChild(document.createTextNode("Drinks"));
+                    drinkTile.className="food__title"
                 data[key].map (el =>{
 
                     const divCard = document.createElement("div");
                     divCard.className= "food__card";
-                    document.querySelector("main").appendChild(divCard);
+                   
+                    divDrink.appendChild(divCard);
+                  
+                    
+
 
                     const divInfo = document.createElement("div");
                     divInfo.className = "info";
@@ -111,17 +111,32 @@ const collection = fetch("assets/datas/collection.json")
                     divInfo.appendChild(typeDrink);
 
                     //added span
-                    const spanAdd = document.createElement("span");
-                    spanAdd.className = "food__card__add";
-                    divCard.appendChild(spanAdd);
+                    // const spanAdd = document.createElement("span");
+                    // spanAdd.className = "food__card__add";
+                    // divCard.appendChild(spanAdd);
+                    getSpanAdd(divCard);
                     
                 })
             }else if(key == "desserts"){
-                data[key].map (el =>{
+                const divDesserts = document.createElement("div");
+                divDesserts.className = "desserts food--wrapper"
+                const dessertsTitle = document.createElement("h1");
+                dessertsTitle.className = "food__title";
+                document.querySelector(".food").appendChild(divDesserts);
+                divDesserts.appendChild(dessertsTitle);
+                dessertsTitle.appendChild(document.createTextNode("Desserts"));
 
+
+
+
+                data[key].map (el =>{
+                    
                     const divCard = document.createElement("div");
-                    document.querySelector("main").appendChild(divCard);
                     divCard.className = "food__card";
+                    divDesserts.appendChild(divCard);
+                    
+                    
+
 
                     const divInfo = document.createElement("div");
                     divInfo.className = "info";
@@ -150,9 +165,11 @@ const collection = fetch("assets/datas/collection.json")
                 
                     //added span
 
-                const spanAdd = document.createElement("span");
-                spanAdd.className = "food__card__add";
-                divCard.appendChild(spanAdd);
+                // const spanAdd = document.createElement("span");
+                // spanAdd.className = "food__card__add";
+                // divCard.appendChild(spanAdd);
+                getSpanAdd(divCard);
+                
 
                 })
             }
@@ -162,10 +179,28 @@ const collection = fetch("assets/datas/collection.json")
             
             
             else{
+                const main =document.querySelector(".food");
+                const div = document.createElement("div");
+                const divTitle = document.createElement("h1");
+                const text = document.createTextNode(key);
+                divTitle.appendChild(text);
+                divTitle.className = "food__title";
+                div.className = key;  
+                div.classList.add("food--wrapper")
+                div.appendChild(divTitle);  
+
+                
+                                    
+
+                
+                main.appendChild(div);
                 
                 data[key].map(el =>{
+
+                   
                     const divCard = document.createElement("div");
-                    document.querySelector("main").appendChild(divCard);
+                    div.appendChild(divCard);
+
                     divCard.className = "food__card";
 
                     const divInfo = document.createElement("div");
@@ -203,9 +238,10 @@ const collection = fetch("assets/datas/collection.json")
 
                     //added span
 
-                   const spanAdd = document.createElement("span");
-                   spanAdd.className = "food__card__add";
-                   divCard.appendChild(spanAdd);
+                //    const spanAdd = document.createElement("span");
+                //    spanAdd.className = "food__card__add";
+                //    divCard.appendChild(spanAdd);
+                    getSpanAdd(divCard);
 
 
 
@@ -234,6 +270,18 @@ btnToggle.addEventListener('click', () =>{
         btnToggle.innerHTML = "Go Light"
     }
 })
+
+
+
+// fuction for cart.
+let cart = [];
+console.log (cart.length);
+
+    if (cart.length == 0)
+        {
+            document.querySelector(".cart").style.display = "none";
+        }    
+
 
 
 

@@ -1,18 +1,25 @@
-.header__nav {
+@media screen and  ( max-width: 800px){
+      
+    
+
+.footer {
+    margin:auto;
+    background-color: $color-dark-orange;
     width: 100%;
-    height: 50px;
     display:flex;
-    .header__nav__list
+
+.footer__list
     {
         margin: auto;
         display: flex;
         flex-direction: row;
         gap: 22px;
+       
         li a{ 
-            color:$color-lm-secondary;
+            color: darkblue;
             text-decoration: none;
             text-transform: capitalize;
-        }
-        font-family: Georgia, 'Times New Roman', Times, serif;
+            }
     }
-    }
+}
+}

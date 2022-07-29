@@ -5,12 +5,26 @@ h2{
 }
 .food{
     min-width: 360px;
-    width: 360px;
-    // background-color: black;
+    width: 100%;
+    &--wrapper{
+        @media screen and (min-width: 800px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    &__title{
+        @media screen and (min-width: 800px) {
+            grid-column: 1 / -1;
+        }
+    }
     &__card{
         display: flex;
-        background-color: $color-white;
+        background-color: $color-lm-secondary;
         margin: 20px 0;
+        @media screen and (min-width: 800px) {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
         &__container{
             aspect-ratio: 133/100;
             margin-right: 10px;
@@ -36,7 +50,7 @@ h2{
             width: 32px;
             height: 32px;
             border-radius: 5px;
-            background-color: $color-dark-orange;
+            background-color: $color-lm-accent;
             font-weight: bolder;
             margin-right: 5px;
             margin-bottom: 5px;
