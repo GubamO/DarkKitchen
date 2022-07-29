@@ -1,4 +1,9 @@
 .header{
+  background-color: $color-lm-main;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
   &__kitchen {
     background-color:$color-lm-main;
     color:$color-lm-secondary;
@@ -7,7 +12,6 @@
     width: 100%;
     display: flex; 
     align-items: center;
-    box-shadow: 0px 2px 10px black; 
     margin-bottom: 5px;
     padding-left: 10px;
     @include fontsizetoem(40);;
@@ -35,9 +39,7 @@
 }
 .cart {
     display: flex;
-    bottom: 80px;
     background-color:$color-lm-main;
-    position: absolute;
     font-family: 'Lato', sans-serif;
     width: 100%;
     padding: 10px;
