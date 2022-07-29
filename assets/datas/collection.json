@@ -3,7 +3,7 @@
 		{
 			"id":1,
 			"nom": "pizza pepperoni",
-			"base": "tomatoes",
+			"base": "tomato",
 			"ingredients" : [
 				"mozarella", "pepperoni"
 			],
@@ -13,12 +13,32 @@
 		{
 			"id":2,
 			"nom": "pizza ham",
-			"base": "tomates",
+			"base": "tomato",
 			"ingredients" : [
 				"mozarella", "ham"
 			],
 			"images" : "pizza_ham.jpeg",
 			"prix" : 10.15
+		},
+		{
+			"id":3,
+			"nom": "pizza goat cheese",
+			"base": "blanche",
+			"ingredients" : [
+				"mozarella", "goat cheese", "bacon", "onion"
+			],
+			"images" : "pizzachevre.jpeg",
+			"prix" : 12.45
+		},
+		{
+			"id":4,
+			"nom": "pizza carbonara",
+			"base": "blanche",
+			"ingredients" : [
+				"cream", "mozarella", "egg", "bacon" 
+			],
+			"images" : "pizzacarbonara.jpg",
+			"prix" : 11.75
 		}
 	],
     "starter":[
@@ -64,13 +84,12 @@
 		}
     ],
 	"drinks":[
-		
 		{
 			"id" : 1,
 			"nom" : "Coca Cola",
 			"type": "soft",
-			"quantity": "25cl",
-			"prix": 1.75
+			"quantity": "33cl",
+			"prix": 2.50
 		},
 		{
 			"id" : 2,
@@ -78,6 +97,27 @@
 			"type" : "soft",
 			"quantity" : "33cl",
 			"prix" : 2.50
+		},
+		{
+			"id" : 3,
+			"nom" : "Fanta",
+			"type" : "soft",
+			"quantity" : "33cl",
+			"prix" : 2.50
+		},
+		{
+			"id" : 4,
+			"nom" : "Pepsi",
+			"type" : "soft",
+			"quantity" : "33cl",
+			"prix" : 2.50
+		},
+		{
+			"id" : 5,
+			"nom" : "Jupiler",
+			"type" : "beer",
+			"quantity" : "33cl",
+			"prix" : 3.00
 		}
 	],
 	"desserts" : [
