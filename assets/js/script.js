@@ -254,4 +254,14 @@ const collection = fetch("assets/datas/collection.json")
 
 
 // fuction for cart.
-let cart = {};
+let cart = [];
+console.log (cart.length);
+
+    if (cart.length == 0)
+        {
+            document.querySelector(".cart").style.display = "none";
+        }    
+
+
+
+
