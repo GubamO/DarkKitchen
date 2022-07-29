@@ -68,7 +68,7 @@ const collection = fetch("assets/datas/collection.json")
             if (key == "drinks"){
 
                 const divDrink =document.createElement("div");
-                divDrink.className = "drinks";
+                divDrink.className = "drinks food--wrapper";
                 document.querySelector(".food").appendChild(divDrink);
                     const drinkTile  = document.createElement("h1");
                     divDrink.appendChild(drinkTile);
@@ -119,7 +119,7 @@ const collection = fetch("assets/datas/collection.json")
                 })
             }else if(key == "desserts"){
                 const divDesserts = document.createElement("div");
-                divDesserts.className = "desserts"
+                divDesserts.className = "desserts food--wrapper"
                 const dessertsTitle = document.createElement("h1");
                 dessertsTitle.className = "food__title";
                 document.querySelector(".food").appendChild(divDesserts);
