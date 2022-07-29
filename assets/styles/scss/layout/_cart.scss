@@ -14,9 +14,8 @@
     align-items: center;
     margin-bottom: 5px;
     padding-left: 10px;
-    @include fontsizetoem(40);;
+    @include fontsizetoem(40);
     font-weight: 700;
-    
   } 
   &__search{
     display: flex;
