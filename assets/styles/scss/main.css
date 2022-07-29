@@ -139,6 +139,7 @@ h2 {
 }
 
 .footer {
+  background-color: #eb5028;
   width: 390px;
   height: 50px;
   display: flex;
@@ -148,10 +149,9 @@ h2 {
   display: flex;
   flex-direction: row;
   gap: 22px;
-  color: #f7f7f7;
 }
 .footer .footer__list li a {
-  color: #f7f7f7;
+  color: darkblue;
   text-decoration: none;
   text-transform: capitalize;
 }
@@ -212,4 +212,24 @@ h2 {
   color: #f7f7f7;
   font-size: 30px;
   font-family: "Lato", sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    margin: auto;
+    background-color: #eb5028;
+    width: 100%;
+    display: flex;
+  }
+  .footer .footer__list {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+  }
+  .footer .footer__list li a {
+    color: darkblue;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
 }/*# sourceMappingURL=main.css.map */
