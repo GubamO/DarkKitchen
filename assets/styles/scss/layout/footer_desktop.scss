@@ -1,18 +1,25 @@
+@media screen and  ( max-width: 800px){
+      
+    
+
 .footer {
+    margin:auto;
     background-color: $color-dark-orange;
-    width: 390px;
-    height: 50px;
+    width: 100%;
     display:flex;
+
 .footer__list
     {
         margin: auto;
         display: flex;
         flex-direction: row;
         gap: 22px;
+       
         li a{ 
-            color:$color-lm-secondary;
+            color: darkblue;
             text-decoration: none;
             text-transform: capitalize;
             }
     }
+}
 }
