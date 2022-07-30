@@ -46,9 +46,16 @@
 //tried something here
 
 
-const getSpanAdd = (card) =>{
+const getSpanAdd = (card, name, price) =>{
     const spanAdd = document.createElement("span");
     spanAdd.className = "food__card__add";
+    const att1 = document.createAttribute('food'); 
+    att1.value = name;
+    spanAdd.setAttributeNode(att1);
+    const att2 =document.createAttribute("price");
+    att2.value = price;
+    spanAdd.setAttributeNode(att2);
+    
     card.appendChild(spanAdd);
 }
 
@@ -113,7 +120,7 @@ const collection = fetch("assets/datas/collection.json")
                     // const spanAdd = document.createElement("span");
                     // spanAdd.className = "food__card__add";
                     // divCard.appendChild(spanAdd);
-                    getSpanAdd(divCard);
+                    getSpanAdd(divCard, el.nom, el.prix);
                     
                 })
             }else if(key == "desserts"){
@@ -166,7 +173,7 @@ const collection = fetch("assets/datas/collection.json")
                 // const spanAdd = document.createElement("span");
                 // spanAdd.className = "food__card__add";
                 // divCard.appendChild(spanAdd);
-                getSpanAdd(divCard);
+                getSpanAdd(divCard, desTitle, desPrice);
                 
 
                 })
@@ -244,7 +251,7 @@ const collection = fetch("assets/datas/collection.json")
                 //    const spanAdd = document.createElement("span");
                 //    spanAdd.className = "food__card__add";
                 //    divCard.appendChild(spanAdd);
-                    getSpanAdd(divCard);
+                    getSpanAdd(divCard, el.nom, el.prix);
 
 
 
@@ -253,8 +260,32 @@ const collection = fetch("assets/datas/collection.json")
 
         
 }})
+.then( () =>{
+    let spanList = document.getElementsByClassName("food__card__add");
+    console.log(spanList);
+    let cartlist = [];
+
+for (const element of spanList) {
+    element.addEventListener('click', event =>{
+        
+        console.log('hi');
+        
+        
+        let elObject = {
+            "name" : elName,
+            "price" : elPrice
+        }
+        cartlist.push(elObject);
+        
+    })
+    
+}})
 
 
 
-// fuction for cart.
-let cart = {};
+
+
+
+
+
+
