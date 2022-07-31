@@ -1,55 +1,15 @@
-// function fetchCollection() {
-//     const response =fetch('assets/datas/collection.json');
-//     const data = response.json(); 
-
-
-//     return data;
-// }
-// const collection =fetchCollection();
-// console.log(collection);
-
-// tried to take datas for the Json file
-
-
-
-    //take a parameter (an element, exemple: div)
-
-    // doesn't return anything but create new elements for the card,
-    //here for the texte divion of a card.
-// const getInfoCard = (division) =>{
-//     const nameInfo = document.createElement("h2");
-
-//     const ingredientInfo = document.createElement("p");
-//     const priceInfo = document.createElement("p");
-
-//     const addInfo = document.createElement("span");
-
-// // create 2 list to append element to the parameter and add class names.
-//     const liste = [nameInfo, ingredientInfo, priceInfo, addInfo];
-//     const listeClass =["info__name","info__ingredient","info__price","info__add"];
-//     for (let i =0; i < liste.length; i++) {
-//         liste[i].className = listeClass[i];
-//         division.appendChild(liste[i]);
-
-//     }
-    
-
-//}
- 
-
-
-
-
-
-
-
-//tried something here
-
 let objectdata;
 
-const getSpanAdd = (card, data) =>{
+const getSpanAdd = (card, name, price) =>{
     const spanAdd = document.createElement("span");
     spanAdd.className = "food__card__add";
+    const att1 = document.createAttribute('food'); 
+    att1.value = name;
+    spanAdd.setAttributeNode(att1);
+    const att2 =document.createAttribute("price");
+    att2.value = price;
+    spanAdd.setAttributeNode(att2);
+    
     card.appendChild(spanAdd);
 }
 
@@ -69,7 +29,72 @@ const collection = fetch("assets/datas/collection.json")
             filterCard(objectdata);
         })
     )
-    .then(data => {return data;})
+    .then(data => {return data;}).then( () =>{
+        let spanList = document.getElementsByClassName("food__card__add");
+        console.log(spanList);
+        let cartlist = [];
+        let compteur = -1;
+        let subTotal =0;
+    
+    for (const element of spanList) {
+        element.addEventListener('click', event =>{
+            compteur++;
+            console.log('hi');
+            const elName =element.getAttribute('food');
+            const elPrice =element.getAttribute('price');
+            let elObject = {
+                "name" : elName,
+                "price" : elPrice
+            }
+            cartlist.push(elObject);
+            console.log(cartlist);
+            console.log(compteur);
+            const cartElemet =document.createElement("div");
+            const cartPlace = document.querySelector(".cartlisting__list");
+            cartPlace.appendChild(cartElemet);
+            const cartTitle =document.createElement("h1");
+            cartTitle.appendChild(document.createTextNode(cartlist[compteur]["name"]));
+            cartElemet.appendChild(cartTitle);
+            const cartPrice = document.createElement("p");
+            cartPrice.appendChild(document.createTextNode("€ "+cartlist[compteur]["price"]));
+            cartElemet.appendChild(cartPrice);
+    
+            const subTotalElement = document.querySelector('.cartlisting__price__subtotal');
+            subTotal += Number( cartlist[compteur]["price"]);
+            subTotalElement.innerHTML = subTotal;
+            console.log(subTotal);
+    
+            
+        })
+        
+    }})
+    
+    
+    
+    
+    
+    
+    
+    
+    // // // Dark-Light mode GB 
+    
+    const btnToggle = document.querySelector('.btn-toggle-dm');
+    
+    btnToggle.addEventListener('click', () =>{
+        const body = document.body
+    
+        if(body.classList.contains('dark')){
+    
+            body.classList.add('light')
+            body.classList.remove('dark')
+            btnToggle.innerHTML = "Go Dark"
+        }
+        else if(body.classList.contains('light')){
+            body.classList.add('dark')
+            body.classList.remove('light')
+            btnToggle.innerHTML = "Go Light"
+        }
+    })
 
 
 
@@ -144,7 +169,7 @@ function generateCard(data){
                     // const spanAdd = document.createElement("span");
                     // spanAdd.className = "food__card__add";
                     // divCard.appendChild(spanAdd);
-                    getSpanAdd(divCard);
+                    getSpanAdd(divCard, el.nom, el.prix);
                     
                 })
             }else if(key == "desserts"){
@@ -198,7 +223,7 @@ function generateCard(data){
                 // const spanAdd = document.createElement("span");
                 // spanAdd.className = "food__card__add";
                 // divCard.appendChild(spanAdd);
-                getSpanAdd(divCard);
+                getSpanAdd(divCard, el.nom, el.prix);
                 
 
                 })
@@ -273,11 +298,27 @@ function generateCard(data){
                 //    const spanAdd = document.createElement("span");
                 //    spanAdd.className = "food__card__add";
                 //    divCard.appendChild(spanAdd);
-                    getSpanAdd(divCard);
+                    getSpanAdd(divCard, el.nom, el.prix);
 
 
 
                 })
             }
+
+        
+}}
+
+
+
+// fuction for cart.
+
+
+
+const cartApparence = (list) =>{
+    if(list.length === 0){
+        document.querySelector(".cart").style.display = "none";
     }
 }
+
+
+cartApparence(cartlist);
