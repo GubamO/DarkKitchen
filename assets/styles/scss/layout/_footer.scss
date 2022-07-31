@@ -1,6 +1,6 @@
 .footer {
-    background-color: $color-dark-orange;
-    width: 390px;
+    background-color: $color-lm-main;
+    width: 100%;
     height: 50px;
     display:flex;
 .footer__list
@@ -14,5 +14,29 @@
             text-decoration: none;
             text-transform: capitalize;
             }
+    }
+}
+
+@media screen and  ( min-width: 800px){
+    .footer {
+        margin:auto;
+        background-color: $color-lm-main;
+        width: 100%;
+        display:flex;
+
+    .footer__list
+        {
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            gap: 22px;
+        
+            li a
+            { 
+                color: $color-lm-secondary;
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+        }
     }
 }

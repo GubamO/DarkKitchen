@@ -29,4 +29,18 @@ body.dark {
             background-color: $color-dm-nightblue;
         }
     }
+    .food{
+        color: $color-lm-secondary;
+        &__card{
+            background-color: $color-dm-nightblue;
+        }
+        
+
+    }
+    .footer{
+        background-color: $color-dm-nightblue;
+    }
+    h1:before{
+        background-color: $color-dm-nightblue;
+    }
 }
