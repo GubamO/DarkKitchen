@@ -45,8 +45,9 @@
 
 //tried something here
 
+let objectdata;
 
-const getSpanAdd = (card) =>{
+const getSpanAdd = (card, data) =>{
     const spanAdd = document.createElement("span");
     spanAdd.className = "food__card__add";
     card.appendChild(spanAdd);
@@ -59,7 +60,36 @@ const getSpanAdd = (card) =>{
 const collection = fetch("assets/datas/collection.json")
     .then (response => response.json())
     .then(data =>{
-        const keys = Object.keys(data);
+            generateCard(data);
+            objectdata=data;
+        }
+    )
+    .then(
+        document.querySelector('.header__kitchen').addEventListener('click', e =>{
+            filterCard(objectdata);
+        })
+    )
+    .then(data => {return data;})
+
+
+
+// fuction for cart.
+let cart = [];
+console.log (cart.length);
+
+    if (cart.length == 0)
+        {
+            document.querySelector(".cart").style.display = "none";
+        }    
+async function filterCard(data, filterCat=['pizzas', 'pasta', 'starter', 'drinks', 'desserts'], filterBase=['tomato', 'white', 'soft', 'beer']){
+    await collection;
+    console.log(collection);
+    data["pizzas"]
+}
+
+
+function generateCard(data){
+    const keys = Object.keys(data);
         for (const key of keys) {
 
             
@@ -236,6 +266,8 @@ const collection = fetch("assets/datas/collection.json")
                    toPay.appendChild(document.createTextNode("€ "+el.prix));
                    divInfo.appendChild(toPay);
 
+                   
+
                     //added span
 
                 //    const spanAdd = document.createElement("span");
@@ -247,21 +279,5 @@ const collection = fetch("assets/datas/collection.json")
 
                 })
             }
-
-        
-}})
-
-
-
-// fuction for cart.
-let cart = [];
-console.log (cart.length);
-
-    if (cart.length == 0)
-        {
-            document.querySelector(".cart").style.display = "none";
-        }    
-
-
-
-
+    }
+}

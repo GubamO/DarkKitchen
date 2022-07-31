@@ -7,7 +7,7 @@
     <title>Dark Kitchen</title>
     <link rel="stylesheet" href="./assets/styles/scss/main.css">
     <link rel="stylesheet" href="./assets/styles/css/main.css">
-    <script defer src="./assets/js/script.js"></script>
+    <script defer src="./assets/js/script2.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/datas/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/datas/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/datas/icons/favicon-16x16.png">
@@ -28,11 +28,12 @@
         </div>    
         <nav class="header__nav">
             <ul class="header__nav__list">
-                <li ><a href="?cat=starter">starter</a></li>
-                <li><a href="?cat=pizzas">pizzas</a></li>
-                <li> <a href="?cat=pasta">pasta</a></li>
-                <li> <a href="?cat=drinks">drinks</a></li>
-                <li><a href="?cat=dessert">dessert</a></li>
+                <li class="all"><a href="#">All</a></li>
+                <li class="starter"><a href="#">starter</a></li>
+                <li class="pizzas"><a  href="#">pizzas</a></li>
+                <li class="pasta"> <a  href="#">pasta</a></li>
+                <li class="drinks"> <a  href="#">drinks</a></li>
+                <li class="desserts"><a  href="#">dessert</a></li>
             </ul>
         </nav>
         <!-- Cart-->
@@ -57,7 +58,7 @@
                 <p class="info__price">€ 10.50</p>
             </div> 
             
-            <span class="food__card__add"></span>
+            <span class="food__card__add" data-value="" data-name="" ></span>
             
          </div>
         <div class="food__card">

@@ -23,7 +23,7 @@
 		{
 			"id":3,
 			"nom": "pizza goat cheese",
-			"base": "blanche",
+			"base": "white",
 			"ingredients" : [
 				"mozarella", "goat cheese", "bacon", "onion"
 			],
@@ -33,7 +33,7 @@
 		{
 			"id":4,
 			"nom": "pizza carbonara",
-			"base": "blanche",
+			"base": "white",
 			"ingredients" : [
 				"cream", "mozarella", "egg", "bacon" 
 			],
@@ -65,7 +65,7 @@
 		{
 			"id":1,
 			"nom": "pasta bolognaise",
-			"base": "penne",
+			"base": "tomato",
 			"ingredients" : [
 				"beef", "carrots", "tomato sauce"
 			],
@@ -75,7 +75,7 @@
         {
 			"id":1,
 			"nom": "pasta carbonara",
-			"base": "penne",
+			"base": "white",
 			"ingredients" : [
 				"eggs", "pecorino", "pancetta"
 			],
@@ -87,35 +87,35 @@
 		{
 			"id" : 1,
 			"nom" : "Coca Cola",
-			"type": "soft",
+			"base": "soft",
 			"quantity": "33cl",
 			"prix": 2.50
 		},
 		{
 			"id" : 2,
 			"nom" : "Sprite",
-			"type" : "soft",
+			"base" : "soft",
 			"quantity" : "33cl",
 			"prix" : 2.50
 		},
 		{
 			"id" : 3,
 			"nom" : "Fanta",
-			"type" : "soft",
+			"base" : "soft",
 			"quantity" : "33cl",
 			"prix" : 2.50
 		},
 		{
 			"id" : 4,
 			"nom" : "Pepsi",
-			"type" : "soft",
+			"base" : "soft",
 			"quantity" : "33cl",
 			"prix" : 2.50
 		},
 		{
 			"id" : 5,
 			"nom" : "Jupiler",
-			"type" : "beer",
+			"base" : "beer",
 			"quantity" : "33cl",
 			"prix" : 3.00
 		}
@@ -125,12 +125,14 @@
 			"id":1,
 			"nom": "tiramissu",
 			"prix": 5,
+			"base":"coffee",
 			"images": "tiramisu.jpg" 
 		},
         {
 			"id":2,
 			"nom": "chocolate mousse",
 			"prix": 2.5,
+			"base":"chocolate",
 			"images":"chocolate_mousse.jpg"
 		}
 	]
